@@ -1,1 +1,2 @@
 require('tamir')
+require('pluginmgr')
