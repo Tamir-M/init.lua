@@ -2,12 +2,27 @@ require('mason').setup()
 
 -- Ensure installation of all the language servers I need
 require('mason-lspconfig').setup({
-  ensure_installed = { "tsserver", "lua_ls" }
+  ensure_installed = {
+    "tsserver",
+    "lua_ls",
+    "eslint"
+  }
 })
 
 -- Using the LSP.
 local lspconfig = require('lspconfig')
+-- TypeScript + ESLint
 lspconfig.tsserver.setup({})
+lspconfig.eslint.setup({
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+})
+
+-- Lua
 lspconfig.lua_ls.setup({
   settings = {
     Lua = {
