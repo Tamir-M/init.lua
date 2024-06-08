@@ -11,6 +11,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local plugins = {
+  "folke/which-key.nvim",
+  "xiyaowong/transparent.nvim",
+  "nvim-treesitter/nvim-treesitter"
+}
 
-
-require('lazy').setup(plugins, opts)
+require('lazy').setup(plugins)
