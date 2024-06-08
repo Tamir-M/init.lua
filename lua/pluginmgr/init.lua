@@ -15,7 +15,10 @@ local plugins = {
   "folke/which-key.nvim",
   "xiyaowong/transparent.nvim",
   "nvim-treesitter/nvim-treesitter",
-  {"nvim-telescope/telescope.nvim", dependencies = 'nvim-lua/plenary.nvim'}
+  {"nvim-telescope/telescope.nvim", dependencies = 'nvim-lua/plenary.nvim'},
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig"
 }
 
 require('lazy').setup(plugins)
