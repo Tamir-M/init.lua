@@ -18,7 +18,8 @@ local plugins = {
   {"nvim-telescope/telescope.nvim", dependencies = 'nvim-lua/plenary.nvim'},
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
-  "neovim/nvim-lspconfig"
+  "neovim/nvim-lspconfig",
+  {"christoomey/vim-tmux-navigator", lazy = false}
 }
 
 require('lazy').setup(plugins)
