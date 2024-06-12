@@ -5,7 +5,8 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     "tsserver",
     "lua_ls",
-    "eslint"
+    "eslint",
+    "rust_analyzer"
   }
 })
 
@@ -29,7 +30,19 @@ lspconfig.lua_ls.setup({
       diagnostics = {
         globals = { 'vim' } }
     }
-  }
+  },
+})
+
+-- Rust
+lspconfig.rust_analyzer.setup({
+  on_attach = function(_, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format()
+      end
+    })
+  end,
 })
 
 -- LSP default binds (will be changed later)
