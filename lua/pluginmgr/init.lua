@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  "folke/which-key.nvim",
   "xiyaowong/transparent.nvim",
   "nvim-treesitter/nvim-treesitter",
   {"nvim-telescope/telescope.nvim", dependencies = 'nvim-lua/plenary.nvim'},
