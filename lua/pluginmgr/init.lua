@@ -18,7 +18,9 @@ local plugins = {
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
-  {"christoomey/vim-tmux-navigator", lazy = false}
+  {"christoomey/vim-tmux-navigator", lazy = false},
+  'hrsh7th/vim-vsnip',
+  'hrsh7th/vim-vsnip-integ'
 }
 
 require('lazy').setup(plugins)
