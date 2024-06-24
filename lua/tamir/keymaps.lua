@@ -19,3 +19,10 @@ vim.keymap.set("i", "<right>", '<cmd>echo "Use l to move!"<CR>')
 vim.keymap.set("i", "<up>", '<cmd>echo "Use k to move!"<CR>')
 vim.keymap.set("i", "<down>", '<cmd>echo "Use j to move!"<CR>')
 
+-- Move lines around
+vim.keymap.set('n', '<A-j>', ":m .+1<CR>==")
+vim.keymap.set('n', '<A-k>', ":m .-2 <CR>==")
+
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
+
