@@ -26,3 +26,15 @@ vim.keymap.set('n', '<A-k>', ":m .-2 <CR>==")
 vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
 
+-- unpack sometimes undefined
+if not table.unpack then
+  table.unpack = unpack
+end
+
+-- Open Visual Studio Code for people that can't use vim motions.
+vim.keymap.set("n", "<leader>ox",
+  function()
+    local row, character = table.unpack(vim.api.nvim_win_get_cursor(0))
+    vim.cmd('!code . && code -g ' .. vim.fn.expand('%') .. ':' .. row .. ':' .. character)
+  end
+)
