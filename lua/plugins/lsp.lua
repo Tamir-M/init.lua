@@ -6,7 +6,9 @@ require('mason-lspconfig').setup({
     "tsserver",
     "lua_ls",
     "eslint",
-    "rust_analyzer"
+    "rust_analyzer",
+    "cssls",
+    "jsonls"
   }
 })
 
@@ -57,6 +59,12 @@ lspconfig.rust_analyzer.setup({
     })
   end,
 })
+
+-- CSS
+lspconfig.cssls.setup({ capabilities = capabilities })
+
+-- JSON
+lspconfig.jsonls.setup({ capabilities = capabilities })
 
 -- LSP default binds (will be changed later)
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
