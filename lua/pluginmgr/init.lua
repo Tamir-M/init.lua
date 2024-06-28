@@ -14,15 +14,16 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
   "xiyaowong/transparent.nvim",
   "nvim-treesitter/nvim-treesitter",
-  {"nvim-telescope/telescope.nvim", dependencies = 'nvim-lua/plenary.nvim'},
+  { "nvim-telescope/telescope.nvim",  dependencies = 'nvim-lua/plenary.nvim' },
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
-  {"christoomey/vim-tmux-navigator", lazy = false},
+  { "christoomey/vim-tmux-navigator", lazy = false },
   'hrsh7th/vim-vsnip',
   'hrsh7th/vim-vsnip-integ',
   'hrsh7th/nvim-cmp',
-  'hrsh7th/cmp-nvim-lsp'
+  'hrsh7th/cmp-nvim-lsp',
+  { "catppuccin/nvim", name = "catppuccin" }
 }
 
 require('lazy').setup(plugins)
